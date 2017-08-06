@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel src -d dist && nodem dist/index.js",
+    "start": "babel src -d dist && node dist/index.js",
     "dev": "babel src -d dist && nodemon dist/index.js"
   },
   "author": "amymc",
