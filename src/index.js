@@ -22,10 +22,6 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.get('/', function(req, res) {
-  res.json({ message: 'hooray! welcome to our api!' });
-});
-
 router.route('/mail')
   .post(function(req, res) {
     const mailItem = new Mail();
