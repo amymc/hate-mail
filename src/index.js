@@ -4,7 +4,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import Mail from './models/mail';
-import variables from './variables';
+
+require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -15,7 +16,7 @@ const router = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect(`mongodb://${variables.user}:${variables.password}@${variables.host}/hate-mail`);
+mongoose.connect(`mongodb://${process.env.USER}:${process.env.PASSWORD}@${process.env.host}/hate-mail`);
 
 // middleware to use for all requests
 router.use(function(req, res, next) {
