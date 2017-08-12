@@ -53,42 +53,6 @@ router.route('/mail')
     });
   });
 
-// router.route('/curses/:curse_id')
-//   .get(function(req, res) {
-//     Curse.findById(req.params.curse_id, function(err, curse) {
-//       if (err)
-//         res.send(err);
-
-//       res.json(curse);
-//     });
-//   })
-
-//   .put(function(req, res) {
-//     Curse.findById(req.params.curse_id, function(err, curse) {
-//       if (err)
-//         res.send(err);
-
-//       curse.name = req.body.name;
-//       curse.save(function(err) {
-//           if (err)
-//               res.send(err);
-
-//           res.json({ message: 'Curse updated!' });
-//       });
-//     });
-//   })
-
-//   .delete(function(req, res) {
-//     Curse.remove({
-//       _id: req.params.curse_id
-//     }, function(err, bear) {
-//       if (err)
-//         res.send(err);
-
-//       res.json({ message: 'Successfully deleted' });
-//     });
-//   });
-
 app.use('/', router);
 
 app.listen(port);
