@@ -36,8 +36,9 @@ app.use(function(req, res, next) {
 
 router.route('/mail')
   .post(function(req, res) {
-    const mailItem = new Mail();
+    let mailItem = new Mail();
     mailItem.bodyText = req.body.bodyText;
+    mailItem.name = req.body.name;
 
     mailItem.save(function(err) {
       res.json({ message: 'New mail created!' });
@@ -50,6 +51,16 @@ router.route('/mail')
         res.send(err);
 
       res.json(mailItems);
+    });
+  });
+
+router.route('/mail/:name')
+  .get(function(req, res) {
+    Mail.findOne({'name': req.params.name} , function(err, mailItem) {
+      if (err)
+        res.send(err);
+
+      res.json(mailItem);
     });
   });
 
