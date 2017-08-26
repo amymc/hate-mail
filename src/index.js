@@ -54,14 +54,21 @@ router.route('/mail')
     });
   });
 
-router.route('/mail/:name')
-  .get(function(req, res) {
-    Mail.findOne({'name': req.params.name} , function(err, mailItem) {
-      if (err)
-        res.send(err);
+// router.route('/mail/:name/:to/:from')
+//   .get(function(req, res) {
 
-      res.json(mailItem);
-    });
+//     Mail.findOne({'name': req.params.name} , function(err, mailItem) {
+//       if (err)
+//         res.send(err);
+
+//       res.json(mailItem);
+//     });
+//   });
+
+
+router.route('/mail/period/:to/:from')
+  .get(function(req, res) {
+      res.json(`Hey ${req.params.to}, I'd rather have my period continuously for 100 years than spend another minute with you. - ${req.params.from}`);
   });
 
 app.use('/', router);
