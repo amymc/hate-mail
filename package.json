@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "babel src -d dist",
-    "dev": "babel src -d dist && nodemon dist/index.js"
+    "dev": "babel src -d dist src --copy-files && nodemon dist/index.js"
   },
   "author": "amymc",
   "license": "ISC",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
+    "ejs": "^2.5.7",
     "morgan": "^1.8.2",
     "nodemon": "^1.12.0"
   }
