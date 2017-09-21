@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <body class="container">
-      <main>
-        <div class="jumbotron">
-          <h1>Hate mail</h1>
-          <p>For all your hostile communication needs</p>
-        </div>
-      </main>
-    </body>
+<html lang="en">
+  <body>
+    <div>
+      <h1>Hate mail</h1>
+      <p>For all your hostile communication needs</p>
+      <h2>Operations</h2>
+      <table>
+        <tr>
+            <th>Path</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>/version</td>
+            <td>Will return content with the current FOAAS version number.</td>
+        </tr>
+        <tr>
+            <td>/operations</td>
+            <td>Will return a JSON list of operations with names and fields. <em>Note: JSON Only</em></td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>

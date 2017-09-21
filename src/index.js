@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 
 app.use(morgan('dev'));
 
-console.log('__dirname', __dirname);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

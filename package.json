@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "babel src -d dist",
-    "dev": "babel src -d dist src --copy-files && nodemon dist/index.js"
+    "copy": "babel src --watch --copy-files -d dist",
+    "serve": "nodemon dist/index.js",
+    "dev": "concurrently 'npm run build' 'npm run copy' 'npm run serve'"
   },
   "author": "amymc",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "auth0-api-jwt-rsa-validation": "0.0.1",
     "babel-cli": "^6.26.0",
     "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-jwt": "^5.3.0",
